@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { createRef, useEffect, useRef } from 'react';
+import React, { createRef, useEffect } from 'react';
 
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ToastsPortal } from '@/components/ToastsPortal';
@@ -7,7 +7,6 @@ import { toastManager } from '@/services/toast-manager.service';
 
 export function ToastsContainer({ position, toastsGap, indent }) {
   const { bindContainerRef } = toastManager;
-  // const containerRef = useRef(null);
   const containerRef = createRef();
 
   useEffect(() => {
