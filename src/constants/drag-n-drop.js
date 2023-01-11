@@ -1,0 +1,1 @@
+export const SCALE_MIN_SPACE_TO_REMOVE_TOAST = 0.4;

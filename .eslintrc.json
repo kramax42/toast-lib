@@ -1,0 +1,53 @@
+{
+  "settings": {
+    "import/resolver": {
+      "alias": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "simple-import-sort",
+    "prettier",
+    "react-hooks",
+    "eslint-plugin-import"
+  ],
+  "rules": {
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "consistent-return": "off",
+    "simple-import-sort/imports": "error",
+    "react/jsx-uses-react": ["off"],
+    "react/react-in-jsx-scope": ["off"],
+    "react/jsx-props-no-spreading": ["off"],
+    "no-shadow": "off",
+    "no-unused-vars": "off",
+    "no-console": "warn",
+    "no-param-reassign": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-unresolved": "off",
+    "import/extensions": "off"
+  }
+}
