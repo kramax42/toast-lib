@@ -22,6 +22,7 @@ export const usePortal = (position) => {
 
     setPortalNode(div);
     setIsLoading(false);
+
     return () => body.removeChild(div);
   }, [position, portalId]);
 
