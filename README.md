@@ -1,5 +1,3 @@
-# React toast library
-
 ## Usage example:
 
 ```jsx
