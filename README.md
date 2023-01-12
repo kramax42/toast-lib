@@ -43,7 +43,8 @@ import {
       />
     </>
   );
-}```
+}
+```
 
 ## List of config values:
 
