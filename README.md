@@ -2,7 +2,7 @@
 
 ## Usage example:
 
-```
+```jsx
 import {
   createToast,
   ToastsContainer,
@@ -28,7 +28,7 @@ import {
             icon: 'white,
             progressBar: 'white',
         },
-        });
+    });
   };
 
   return (
@@ -44,3 +44,14 @@ import {
     </>
   );
 }```
+
+## List of config values:
+
+- message: string,
+- isAutoClose: boolean,
+- duration: number,
+- THEME_VARIANTS: { dark, colored, light }
+- TOAST_POSITIONS: { topRight, topLeft, bottomRight, bottomLeft }
+- TOAST_VARIANTS: { success, info, danger, warning }
+- ANIMATION_VARIANTS: { slide, fade, scale }
+- customColorConfig: { background: colorString, text: colorString, icon: colorString, progressBar: colorString}
