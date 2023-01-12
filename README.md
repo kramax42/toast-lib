@@ -12,7 +12,7 @@ import {
   ANIMATION_VARIANTS
 } from 'toast-lib-react-kra';
 
-  export function CreateToast() {
+  export function Example() {
     const onClickMakeToast = () => {
         createToast({
         message: 'Hello, World!',
@@ -47,12 +47,13 @@ import {
 ```
 
 ## List of config values:
-
 - message: string,
 - isAutoClose: boolean,
 - duration: number,
-- THEME_VARIANTS: { dark, colored, light }
-- TOAST_POSITIONS: { topRight, topLeft, bottomRight, bottomLeft }
-- TOAST_VARIANTS: { success, info, danger, warning }
-- ANIMATION_VARIANTS: { slide, fade, scale }
-- customColorConfig: { background: colorString, text: colorString, icon: colorString, progressBar: colorString}
+- indent: number
+- toastsGap: number
+- theme: THEME_VARIANTS = { dark, colored, light }
+- position: TOAST_POSITIONS = { topRight, topLeft, bottomRight, bottomLeft }
+- variant: TOAST_VARIANTS = { success, info, danger, warning }
+- aniamtion: ANIMATION_VARIANTS = { slide, fade, scale }
+- customColorConfig: { background: string, text: string, icon: string, progressBar: string}
