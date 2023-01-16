@@ -1,70 +1,102 @@
 import { keyframes } from 'styled-components';
 
-import { TRANSFORM_SCALE_VALUE } from '@/constants/animation';
+import { ANIMATION_VARIANTS } from '@/constants/animation';
+
+export const ANIMATION_PARAMS = {
+  [ANIMATION_VARIANTS.slide]: {
+    translateX: {
+      inactive: -100,
+      active: 0,
+    },
+    opacity: {
+      inactive: 0,
+      active: 1,
+    },
+  },
+  [ANIMATION_VARIANTS.fade]: {
+    opacity: {
+      inactive: 0,
+      active: 1,
+    },
+  },
+  [ANIMATION_VARIANTS.scale]: {
+    scale: {
+      inactive: 0.8,
+      active: 1,
+    },
+    opacity: {
+      inactive: 0,
+      active: 1,
+    },
+  },
+};
 
 const slide = {
   enter: keyframes`
         from {
-            opacity: 0;
-            transform: translateX(-100%);
+            opacity: ${ANIMATION_PARAMS.slide.opacity.inactive};
+            transform: translateX(${ANIMATION_PARAMS.slide.translateX.inactive}%);
         }
         to {
-            opacity: 1;
-            transform: translateX(0%);
+            opacity: ${ANIMATION_PARAMS.slide.opacity.active};
+            transform: translateX(${ANIMATION_PARAMS.slide.translateX.active}%);
 
         }`,
   exit: keyframes`
         from {
-            opacity: 1;
-            transform: translateX(0%);
+            opacity: ${ANIMATION_PARAMS.slide.opacity.active};
+            transform: translateX(${ANIMATION_PARAMS.slide.translateX.active}%);
         }
         to {
-            opacity: 0;
-            transform: translateX(100%);
+            opacity: ${ANIMATION_PARAMS.slide.opacity.inactive};
+            transform: translateX(${
+              -1 * ANIMATION_PARAMS.slide.translateX.inactive
+            }%);
         }`,
 };
 
 const fade = {
   enter: keyframes`
         from {
-            opacity: 0;
+            opacity: ${ANIMATION_PARAMS.fade.opacity.inactive};
         }
         to {
-            opacity: 1;
+            opacity: ${ANIMATION_PARAMS.fade.opacity.active};
         }`,
   exit: keyframes`
         from {
-            opacity: 1;
+            opacity: ${ANIMATION_PARAMS.fade.opacity.active};
         }
         to {
-            opacity: 0;
+            opacity: ${ANIMATION_PARAMS.fade.opacity.inactive};
         }`,
 };
 
 const scale = {
   enter: keyframes`
         from {
-            opacity: 0;
-            transform: scale(${TRANSFORM_SCALE_VALUE});
+            opacity: ${ANIMATION_PARAMS.scale.opacity.inactive};
+            transform: scale(${ANIMATION_PARAMS.scale.scale.inactive});
         }
         to {
-            opacity: 1;
-            transform: translateX(0);
+            opacity: ${ANIMATION_PARAMS.scale.opacity.active};
+            transform: scale(${ANIMATION_PARAMS.scale.scale.active});
         }`,
   exit: keyframes`
         from {
-            opacity: 1;
+            opacity: ${ANIMATION_PARAMS.scale.opacity.active};
+            transform: scale(${ANIMATION_PARAMS.scale.scale.active});
         }
         to {
-            opacity: 0;
-            transform: scale(${TRANSFORM_SCALE_VALUE});
+            opacity: ${ANIMATION_PARAMS.scale.opacity.inactive};
+            transform: scale(${ANIMATION_PARAMS.scale.scale.inactive});
         }`,
 };
 
 const animations = {
-  fade,
-  slide,
-  scale,
+  [ANIMATION_VARIANTS.fade]: fade,
+  [ANIMATION_VARIANTS.slide]: slide,
+  [ANIMATION_VARIANTS.scale]: scale,
 };
 
 export const getAnimation = (animationVariant) => {
