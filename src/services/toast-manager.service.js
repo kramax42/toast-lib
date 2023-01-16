@@ -3,7 +3,7 @@ import { TOAST_POSITIONS } from '@/constants/toast-configs';
 import { themes } from '@/styles/themes';
 
 export class ToastManager {
-  #MAX_TOASTS_ON_SCREEN = 4;
+  #MAX_TOASTS_ON_SCREEN = 3;
 
   #lastToastId = 0;
 
@@ -25,7 +25,15 @@ export class ToastManager {
     });
   }
 
-  bindContainerRef = ({ containerRef, position }) => {
+  bindContainerRef = ({ containerRef, position, previousPosition }) => {
+    if (this.#toasts.has(previousPosition)) {
+      this.#toasts.set(previousPosition, []);
+    }
+
+    if (this.#containerRefs.has(previousPosition)) {
+      this.#containerRefs.set(previousPosition, null);
+    }
+
     if (this.#containerRefs.has(position)) {
       this.#containerRefs.set(position, containerRef);
 
