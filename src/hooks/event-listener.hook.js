@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import { useIsomorphicLayoutEffect } from '@/hooks/isomorphic-layout-effect.hook';
+import { useIsomorphicLayoutEffect } from '@/hooks';
 
 export function useEventListener(eventName, handler, element, options) {
   const savedHandler = useRef(handler);

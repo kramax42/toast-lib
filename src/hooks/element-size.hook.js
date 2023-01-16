@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { useEventListener } from '@/hooks/event-listener.hook';
-import { useIsomorphicLayoutEffect } from '@/hooks/isomorphic-layout-effect.hook';
+import { useEventListener, useIsomorphicLayoutEffect } from '@/hooks';
 
 export function useElementSize(ref) {
   const [height, setHeight] = useState(ref?.current?.offsetHeight || 0);

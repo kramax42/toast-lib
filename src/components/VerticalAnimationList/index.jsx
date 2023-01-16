@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 
 import { TOAST_VERICAL_TRANSFORM_DURATION } from '@/constants/animation';
-import { useIsomorphicLayoutEffect } from '@/hooks/isomorphic-layout-effect.hook';
-import { usePrevious } from '@/hooks/previous.hook';
+import { useIsomorphicLayoutEffect, usePrevious } from '@/hooks';
 import { calculateBoundingBoxes } from '@/utils/calculate-bounding-boxes';
 
 export function VerticalAnimationList({ children }) {

@@ -9,7 +9,7 @@ import { createPortal } from 'react-dom';
 
 import { Toast } from '@/components/Toast';
 import { VerticalAnimationList } from '@/components/VerticalAnimationList';
-import { usePortal } from '@/hooks/portal.hook';
+import { usePortal } from '@/hooks';
 import { toastManager } from '@/services/toast-manager.service';
 
 import { Container } from './styled';

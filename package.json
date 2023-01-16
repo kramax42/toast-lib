@@ -1,6 +1,6 @@
 {
   "name": "toast-lib-react-kra",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Toast library for React",
   "main": "dist/index.js",
   "scripts": {

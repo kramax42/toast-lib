@@ -8,9 +8,7 @@ import {
   TOAST_ENTER_EXIT_DURATION_MS,
 } from '@/constants/animation';
 import { SCALE_MIN_SPACE_TO_REMOVE_TOAST } from '@/constants/drag-n-drop';
-import { useAnimation } from '@/hooks/animation.hook';
-import { useDrag } from '@/hooks/drag.hook';
-import { useElementSize } from '@/hooks/element-size.hook';
+import { useAnimation, useDrag, useElementSize } from '@/hooks';
 
 import {
   CloseButton,

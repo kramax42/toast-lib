@@ -3,7 +3,7 @@ import React, { createRef, useEffect } from 'react';
 
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ToastsPortal } from '@/components/ToastsPortal';
-import { usePrevious } from '@/hooks/previous.hook';
+import { usePrevious } from '@/hooks';
 import { toastManager } from '@/services/toast-manager.service';
 
 export function ToastsContainer({ position, toastsGap, indent }) {
