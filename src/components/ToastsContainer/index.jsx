@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { createRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ToastsPortal } from '@/components/ToastsPortal';
@@ -8,14 +8,14 @@ import { toastManager } from '@/services/toast-manager.service';
 
 export function ToastsContainer({ position, toastsGap, indent }) {
   const { bindContainerRef } = toastManager;
-  const containerRef = createRef();
+  const containerRef = useRef();
   const previousPosition = usePrevious(position || null);
 
   useEffect(() => {
-    if (containerRef) {
+    if (containerRef && position !== previousPosition) {
       bindContainerRef({ containerRef, position, previousPosition });
     }
-  }, [bindContainerRef, containerRef, position]);
+  }, [bindContainerRef, containerRef, position, previousPosition]);
 
   return (
     <ErrorBoundary>

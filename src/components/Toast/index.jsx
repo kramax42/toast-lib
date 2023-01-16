@@ -8,7 +8,8 @@ import {
   TOAST_ENTER_EXIT_DURATION_MS,
 } from '@/constants/animation';
 import { SCALE_MIN_SPACE_TO_REMOVE_TOAST } from '@/constants/drag-n-drop';
-import { useAnimation, useDrag, useElementSize } from '@/hooks';
+import { useDrag, useElementSize } from '@/hooks';
+import { getAnimation } from '@/utils/animation';
 
 import {
   CloseButton,
@@ -34,7 +35,7 @@ export const Toast = forwardRef(
   ) => {
     const { width: toastWidth } = useElementSize(ref);
 
-    const animation = useAnimation(animationVariant);
+    const animation = getAnimation(animationVariant);
     const [isAnimationEnter, setIsAnimationEnter] = useState(true);
 
     const removeToastHandler = () => {

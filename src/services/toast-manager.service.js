@@ -36,7 +36,6 @@ export class ToastManager {
 
     if (this.#containerRefs.has(position)) {
       this.#containerRefs.set(position, containerRef);
-
       this.#containerRefs
         .get(position)
         .current.updateToasts(this.#toasts.get(position));
