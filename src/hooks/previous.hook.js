@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 
 export const usePrevious = (value) => {
-  const previousChildrenRef = useRef();
+  const previousRef = useRef();
 
   useEffect(() => {
-    previousChildrenRef.current = value;
+    previousRef.current = value;
   }, [value]);
 
-  return previousChildrenRef.current;
+  return previousRef.current;
 };
