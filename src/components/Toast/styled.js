@@ -55,5 +55,6 @@ export const Message = styled.p`
   max-width: ${toast.message.maxWidth}px;
   font-size: ${fontSizes[3]}px;
   font-family: inherit;
+  word-break: break-all;
   hyphens: auto;
 `;
