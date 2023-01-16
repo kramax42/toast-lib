@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 import { TOAST_VERICAL_TRANSFORM_DURATION } from '@/constants/animation';
-import { useIsomorphicLayoutEffect, usePrevious } from '@/hooks';
 import { calculateBoundingBoxes } from '@/utils/calculate-bounding-boxes';
+
+import { useIsomorphicLayoutEffect } from './isomorphic-layout-effect.hook';
+import { usePrevious } from './previous.hook';
 
 export const useVerticalAnimation = (children) => {
   const [boundingBox, setBoundingBox] = useState({});
