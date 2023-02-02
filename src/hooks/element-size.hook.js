@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { useEventListener } from './event-listener.hook';
 import { useIsomorphicLayoutEffect } from './isomorphic-layout-effect.hook';

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import { TOAST_ICONS } from '@/constants/toast-configs';
 import { componentStyles } from '@/styles/components';

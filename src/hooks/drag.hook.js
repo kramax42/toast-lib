@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 function getX(event) {
   return event.targetTouches && event.targetTouches.length >= 1

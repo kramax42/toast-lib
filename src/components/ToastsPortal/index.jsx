@@ -1,10 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {
-  createRef,
-  forwardRef,
-  useImperativeHandle,
-  useState,
-} from 'react';
+import { createRef, forwardRef, useImperativeHandle, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Toast } from '@/components/Toast';

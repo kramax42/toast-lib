@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 
 import { TOAST_VERICAL_TRANSFORM_DURATION } from '@/constants/animation';
 import { calculateBoundingBoxes } from '@/utils/calculate-bounding-boxes';
@@ -25,7 +25,7 @@ export const useVerticalAnimation = (children) => {
     const hasPrevBoundingBox = Object.keys(prevBoundingBox).length;
 
     if (hasPrevBoundingBox) {
-      React.Children.forEach(children, (child) => {
+      Children.forEach(children, (child) => {
         const domNode = child.ref.current;
         const firstBox = prevBoundingBox[child.key];
 

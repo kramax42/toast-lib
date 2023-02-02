@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ToastsPortal } from '@/components/ToastsPortal';
