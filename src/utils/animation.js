@@ -1,35 +1,6 @@
 import { keyframes } from 'styled-components';
 
-import { ANIMATION_VARIANTS } from '@/constants/animation';
-
-export const ANIMATION_PARAMS = {
-  [ANIMATION_VARIANTS.slide]: {
-    translateX: {
-      inactive: -100,
-      active: 0,
-    },
-    opacity: {
-      inactive: 0,
-      active: 1,
-    },
-  },
-  [ANIMATION_VARIANTS.fade]: {
-    opacity: {
-      inactive: 0,
-      active: 1,
-    },
-  },
-  [ANIMATION_VARIANTS.scale]: {
-    scale: {
-      inactive: 0.8,
-      active: 1,
-    },
-    opacity: {
-      inactive: 0,
-      active: 1,
-    },
-  },
-};
+import { ANIMATION_PARAMS, ANIMATION_VARIANTS } from '@/constants/animation';
 
 const slide = {
   enter: keyframes`

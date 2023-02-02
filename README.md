@@ -3,7 +3,7 @@
 ```jsx
 import {
   createToast,
-  ToastsContainer,
+  ToastServices,
   THEME_VARIANTS,
   TOAST_POSITIONS,
   TOAST_VARIANTS,
@@ -34,7 +34,7 @@ import {
       <button onClick={onClickMakeToast}>
         Create Toast
       </button>
-      <ToastsContainer
+      <ToastServices
         position={position}
         indent={indent}
         toastsGap={toastsGap}

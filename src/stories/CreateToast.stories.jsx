@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { ToastsContainer } from '@/components/ToastsContainer';
+import { ToastServices } from '@/components/ToastServices';
 import { ANIMATION_VARIANTS } from '@/constants/animation';
 import { defaultToastConfig } from '@/constants/default-toast-config';
 import {
@@ -14,7 +14,7 @@ import { Button, Container } from './styled';
 
 export default {
   title: 'CreateToast',
-  component: ToastsContainer,
+  component: ToastServices,
   argTypes: {
     message: {
       control: 'text',
@@ -109,7 +109,7 @@ export function CreateToast({
       <Button data-test="create-toast-btn" onClick={onClickMakeToast}>
         Create Toast
       </Button>
-      <ToastsContainer
+      <ToastServices
         position={position}
         indent={indent}
         toastsGap={toastsGap}

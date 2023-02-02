@@ -1,4 +1,4 @@
-import { ToastsContainer } from '@/components/ToastsContainer';
+import { ToastServices } from '@/components/ToastServices';
 import { ANIMATION_VARIANTS } from '@/constants/animation';
 import {
   THEME_VARIANTS,
@@ -11,7 +11,7 @@ const { createToast } = toastManager;
 
 export {
   createToast,
-  ToastsContainer,
+  ToastServices,
   THEME_VARIANTS,
   TOAST_POSITIONS,
   TOAST_VARIANTS,

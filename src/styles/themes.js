@@ -2,94 +2,94 @@ import { TOAST_VARIANTS } from '@/constants/toast-configs';
 
 import { colors } from './colors';
 
-const lightThemeDefault = {
-  background: colors.light,
-  text: colors.dark,
+const defaultThemes = {
+  light: {
+    background: colors.light,
+    text: colors.dark,
+  },
+  dark: {
+    background: colors.dark,
+    text: colors.light,
+  },
+  colored: {
+    text: colors.light,
+    progressBar: colors.transparent,
+    icon: colors.light,
+  },
 };
 
 const lightTheme = {
   variants: {
     [TOAST_VARIANTS.success]: {
       colorConfig: {
-        background: lightThemeDefault.background,
-        text: lightThemeDefault.text,
+        background: defaultThemes.light.background,
+        text: defaultThemes.light.text,
         progressBar: colors.green,
         icon: colors.green,
       },
     },
     [TOAST_VARIANTS.danger]: {
       colorConfig: {
-        background: lightThemeDefault.background,
-        text: lightThemeDefault.text,
+        background: defaultThemes.light.background,
+        text: defaultThemes.light.text,
         progressBar: colors.red,
         icon: colors.red,
       },
     },
     [TOAST_VARIANTS.warning]: {
       colorConfig: {
-        background: lightThemeDefault.background,
-        text: lightThemeDefault.text,
+        background: defaultThemes.light.background,
+        text: defaultThemes.light.text,
         progressBar: colors.yellow,
         icon: colors.yellow,
       },
     },
     [TOAST_VARIANTS.info]: {
       colorConfig: {
-        background: lightThemeDefault.background,
-        text: lightThemeDefault.text,
+        background: defaultThemes.light.background,
+        text: defaultThemes.light.text,
         progressBar: colors.blue,
         icon: colors.blue,
       },
     },
   },
-};
-
-const darkThemeDefault = {
-  background: colors.dark,
-  text: colors.light,
 };
 
 const darkTheme = {
   variants: {
     [TOAST_VARIANTS.success]: {
       colorConfig: {
-        background: darkThemeDefault.background,
-        text: darkThemeDefault.text,
+        background: defaultThemes.dark.background,
+        text: defaultThemes.dark.text,
         progressBar: colors.green,
         icon: colors.green,
       },
     },
     [TOAST_VARIANTS.danger]: {
       colorConfig: {
-        background: darkThemeDefault.background,
-        text: darkThemeDefault.text,
+        background: defaultThemes.dark.background,
+        text: defaultThemes.dark.text,
         progressBar: colors.red,
         icon: colors.red,
       },
     },
     [TOAST_VARIANTS.warning]: {
       colorConfig: {
-        background: darkThemeDefault.background,
-        text: darkThemeDefault.text,
+        background: defaultThemes.dark.background,
+        text: defaultThemes.dark.text,
         progressBar: colors.yellow,
         icon: colors.yellow,
       },
     },
     [TOAST_VARIANTS.info]: {
       colorConfig: {
-        background: darkThemeDefault.background,
-        text: darkThemeDefault.text,
+        background: defaultThemes.dark.background,
+        text: defaultThemes.dark.text,
         progressBar: colors.blue,
         icon: colors.blue,
       },
     },
   },
-};
-
-const coloredThemeDefault = {
-  text: colors.light,
-  progressBar: colors.transparent,
-  icon: colors.light,
 };
 
 const coloredTheme = {
@@ -97,33 +97,33 @@ const coloredTheme = {
     [TOAST_VARIANTS.success]: {
       colorConfig: {
         background: colors.green,
-        text: coloredThemeDefault.text,
-        progressBar: coloredThemeDefault.progressBar,
-        icon: coloredThemeDefault.icon,
+        text: defaultThemes.colored.text,
+        progressBar: defaultThemes.colored.progressBar,
+        icon: defaultThemes.colored.icon,
       },
     },
     [TOAST_VARIANTS.danger]: {
       colorConfig: {
         background: colors.red,
-        text: coloredThemeDefault.text,
-        progressBar: coloredThemeDefault.progressBar,
-        icon: coloredThemeDefault.icon,
+        text: defaultThemes.colored.text,
+        progressBar: defaultThemes.colored.progressBar,
+        icon: defaultThemes.colored.icon,
       },
     },
     [TOAST_VARIANTS.warning]: {
       colorConfig: {
         background: colors.yellow,
-        text: coloredThemeDefault.text,
-        progressBar: coloredThemeDefault.progressBar,
-        icon: coloredThemeDefault.icon,
+        text: defaultThemes.colored.text,
+        progressBar: defaultThemes.colored.progressBar,
+        icon: defaultThemes.colored.icon,
       },
     },
     [TOAST_VARIANTS.info]: {
       colorConfig: {
         background: colors.blue,
-        text: coloredThemeDefault.text,
-        progressBar: coloredThemeDefault.progressBar,
-        icon: coloredThemeDefault.icon,
+        text: defaultThemes.colored.text,
+        progressBar: defaultThemes.colored.progressBar,
+        icon: defaultThemes.colored.icon,
       },
     },
   },
