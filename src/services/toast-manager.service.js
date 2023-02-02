@@ -5,6 +5,8 @@ import { themes } from '@/styles/themes';
 export class ToastManager {
   #MAX_TOASTS_ON_SCREEN = 3;
 
+  #MAX_MESSAGE_LENGTH = 20;
+
   #lastToastId = 0;
 
   #toasts = new Map();
@@ -25,6 +27,20 @@ export class ToastManager {
     });
   }
 
+  #generateToastId = () => {
+    return this.#lastToastId + 1;
+  };
+
+  #formatMessage = (message) => {
+    if (typeof message === 'string') {
+      if (message.length <= this.#MAX_MESSAGE_LENGTH) {
+        return message;
+      }
+      return message.slice(0, this.#MAX_MESSAGE_LENGTH);
+    }
+    return '';
+  };
+
   bindContainerRef = ({ containerRef, position, previousPosition }) => {
     if (this.#toasts.has(previousPosition)) {
       this.#toasts.set(previousPosition, []);
@@ -40,10 +56,6 @@ export class ToastManager {
         .get(position)
         .current.updateToasts(this.#toasts.get(position));
     }
-  };
-
-  generateToastId = () => {
-    return this.#lastToastId + 1;
   };
 
   getMaxToastsOnScreen = () => {
@@ -62,23 +74,23 @@ export class ToastManager {
     customColorConfig = {},
   }) => {
     const { colorConfig } = themes[theme].variants[variant];
-    this.#lastToastId = this.generateToastId();
+    this.#lastToastId = this.#generateToastId();
     const newToast = {
       theme,
       variant,
-      message,
       duration,
       isAutoClose,
       animation,
       indent,
       position,
+      message: this.#formatMessage(message),
+      id: this.#lastToastId,
       colorConfig: {
         background: customColorConfig.background || colorConfig.background,
         text: customColorConfig.text || colorConfig.text,
         icon: customColorConfig.icon || colorConfig.icon,
         progressBar: customColorConfig.progressBar || colorConfig.progressBar,
       },
-      id: this.#lastToastId,
     };
 
     this.#toasts.get(position).push(newToast);
