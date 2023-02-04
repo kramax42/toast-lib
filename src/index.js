@@ -9,9 +9,11 @@ import { toastManager } from '@/services/toast-manager.service';
 
 const { createToast } = toastManager;
 
+const ToastsContainer = ToastServices;
+
 export {
   createToast,
-  ToastServices,
+  ToastsContainer,
   THEME_VARIANTS,
   TOAST_POSITIONS,
   TOAST_VARIANTS,

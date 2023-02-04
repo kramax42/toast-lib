@@ -14,7 +14,6 @@ export const ToastWrapper = styled.div`
   background-color: ${({ backgroundColor }) => backgroundColor};
   color: ${({ textColor }) => textColor};
   border-radius: ${spaces[1]}px;
-
   animation: ${({ isAnimationEnter, animation, animationDuration }) =>
     css`
       ${isAnimationEnter ? animation.enter : animation.exit}

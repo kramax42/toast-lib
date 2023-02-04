@@ -69,6 +69,7 @@ export const Toast = forwardRef(
     return (
       <RemoveToastAnimationWrapper ref={ref}>
         <ToastWrapper
+          draggable
           data-test={`toast-${id}`}
           backgroundColor={colorConfig.background}
           textColor={colorConfig.text}

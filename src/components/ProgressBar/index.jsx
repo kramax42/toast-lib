@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 
 import { Bar, Container, FilledBar } from './styled';
 
 const MAX_PROGRESS = 100;
 
-export function ProgressBar({ duration, width, color }) {
+export const ProgressBar = memo(function ProgressBar({
+  duration,
+  width,
+  color,
+}) {
   const [progress, setProgress] = useState(0);
 
   const intervalRef = useRef(null);
@@ -22,7 +26,7 @@ export function ProgressBar({ duration, width, color }) {
 
   useEffect(() => {
     if (progress >= MAX_PROGRESS) {
-      return () => clearInterval(intervalRef.current);
+      clearInterval(intervalRef.current);
     }
   }, [progress]);
 
@@ -39,7 +43,7 @@ export function ProgressBar({ duration, width, color }) {
       </Bar>
     </Container>
   );
-}
+});
 
 ProgressBar.propTypes = {
   duration: PropTypes.number.isRequired,
