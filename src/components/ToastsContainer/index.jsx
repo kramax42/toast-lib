@@ -32,32 +32,30 @@ export const ToastsContainer = forwardRef(
     const portalChildren = (
       <Container indent={indent} position={position} toastsGap={toastsGap}>
         <VerticalAnimationList>
-          {toasts
-            .slice(0, toastManager.getMaxToastsOnScreen())
-            .map(
-              ({
-                id,
-                message,
-                duration,
-                isAutoClose,
-                variant,
-                animation,
-                colorConfig,
-              }) => (
-                <Toast
-                  id={id}
-                  key={id}
-                  ref={createRef()}
-                  message={message}
-                  removeToast={removeToastById(id)}
-                  duration={duration}
-                  variant={variant}
-                  animationVariant={animation}
-                  isAutoClose={isAutoClose}
-                  colorConfig={colorConfig}
-                />
-              ),
-            )}
+          {toasts.map(
+            ({
+              id,
+              message,
+              duration,
+              isAutoClose,
+              variant,
+              animation,
+              colorConfig,
+            }) => (
+              <Toast
+                id={id}
+                key={id}
+                ref={createRef()}
+                message={message}
+                removeToast={removeToastById(id)}
+                duration={duration}
+                variant={variant}
+                animationVariant={animation}
+                isAutoClose={isAutoClose}
+                colorConfig={colorConfig}
+              />
+            ),
+          )}
         </VerticalAnimationList>
       </Container>
     );

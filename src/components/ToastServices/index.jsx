@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ToastsContainer } from '@/components/ToastsContainer';
 import { usePrevious } from '@/hooks';
 import { toastManager } from '@/services/toast-manager.service';
 
-export function ToastServices({ position, toastsGap, indent }) {
+export const ToastServices = memo(function ToastServices({
+  position,
+  toastsGap,
+  indent,
+}) {
   const { bindContainerRef } = toastManager;
   const containerRef = useRef();
   const previousPosition = usePrevious(position || null);
@@ -27,7 +31,7 @@ export function ToastServices({ position, toastsGap, indent }) {
       />
     </ErrorBoundary>
   );
-}
+});
 
 ToastServices.propTypes = {
   position: PropTypes.string.isRequired,

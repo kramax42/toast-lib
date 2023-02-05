@@ -41,6 +41,14 @@ export class ToastManager {
     return '';
   };
 
+  #updateToasts = (position) => {
+    this.#containerRefs
+      .get(position)
+      .current.updateToasts(
+        this.#toasts.get(position).slice(0, this.#MAX_TOASTS_ON_SCREEN),
+      );
+  };
+
   bindContainerRef = ({ containerRef, position, previousPosition }) => {
     if (this.#toasts.has(previousPosition)) {
       this.#toasts.set(previousPosition, []);
@@ -94,9 +102,9 @@ export class ToastManager {
     };
 
     this.#toasts.get(position).push(newToast);
-    this.#containerRefs
-      .get(position)
-      .current.updateToasts(this.#toasts.get(position));
+    if (this.#toasts.get(position).length <= this.#MAX_TOASTS_ON_SCREEN) {
+      this.#updateToasts(position);
+    }
   };
 
   removeToast = ({ position, id }) => {
@@ -104,9 +112,7 @@ export class ToastManager {
       position,
       this.#toasts.get(position).filter((toast) => toast.id !== id),
     );
-    this.#containerRefs
-      .get(position)
-      .current.updateToasts(this.#toasts.get(position));
+    this.#updateToasts(position);
   };
 }
 
