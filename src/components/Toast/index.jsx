@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef, useEffect, useMemo, useState } from 'react';
 
 import { ProgressBar } from '@/components/ProgressBar';
 import { ToastIcon } from '@/components/ToastIcon';
@@ -35,8 +35,12 @@ export const Toast = forwardRef(
   ) => {
     const { width: toastWidth } = useElementSize(ref);
 
-    const animation = getAnimation(animationVariant);
     const [isAnimationEnter, setIsAnimationEnter] = useState(true);
+
+    const animation = useMemo(
+      () => getAnimation(animationVariant),
+      [animationVariant],
+    );
 
     const removeToastHandler = () => {
       setIsAnimationEnter(false);
