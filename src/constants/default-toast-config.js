@@ -8,7 +8,7 @@ import { themes } from '@/styles/themes';
 
 export const defaultToastConfig = {
   message: 'Hello, World!',
-  duration: 5000,
+  duration: 4000,
   isAutoClose: true,
   indent: 25,
   toastsGap: 15,
