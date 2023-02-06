@@ -15,6 +15,7 @@ export const useDrag = ({ ref, removeToast, minSpaceToRemove = 100 }) => {
   });
 
   const handleDragStart = (event) => {
+    event.dataTransfer.setDragImage(new Image(), 0, 0);
     dragRef.current.startNodeX = ref.current.getBoundingClientRect().x;
     dragRef.current.startDragX = getX(event);
   };
